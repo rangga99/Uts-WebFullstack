@@ -29,13 +29,10 @@ class Equipment extends Model
         'location',
     ];
 
-    protected function casts(): array
-    {
-        return [
-            'purchase_date'  => 'date',
-            'purchase_price' => 'decimal:2',
-        ];
-    }
+    protected $casts = [
+        'purchase_date'  => 'date',
+        'purchase_price' => 'decimal:2',
+    ];
 
     // -------------------------------------------------------
     // Relationships

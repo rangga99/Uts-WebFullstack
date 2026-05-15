@@ -28,14 +28,11 @@ class EquipmentCheckout extends Model
         'processed_by',
     ];
 
-    protected function casts(): array
-    {
-        return [
-            'checked_out_at'     => 'datetime',
-            'expected_return_at' => 'datetime',
-            'returned_at'        => 'datetime',
-        ];
-    }
+    protected $casts = [
+        'checked_out_at'     => 'datetime',
+        'expected_return_at' => 'datetime',
+        'returned_at'        => 'datetime',
+    ];
 
     // -------------------------------------------------------
     // Relationships

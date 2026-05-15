@@ -23,15 +23,12 @@ class Room extends Model
         'is_available',
     ];
 
-    protected function casts(): array
-    {
-        return [
-            'facilities'     => 'array',
-            'is_available'   => 'boolean',
-            'price_per_hour' => 'decimal:2',
-            'capacity'       => 'integer',
-        ];
-    }
+    protected $casts = [
+        'facilities'     => 'array',
+        'is_available'   => 'boolean',
+        'price_per_hour' => 'decimal:2',
+        'capacity'       => 'integer',
+    ];
 
     // -------------------------------------------------------
     // Relationships

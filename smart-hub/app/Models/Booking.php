@@ -29,17 +29,14 @@ class Booking extends Model
         'cancellation_reason',
     ];
 
-    protected function casts(): array
-    {
-        return [
-            'start_datetime' => 'datetime',
-            'end_datetime'   => 'datetime',
-            'confirmed_at'   => 'datetime',
-            'cancelled_at'   => 'datetime',
-            'duration_hours' => 'decimal:2',
-            'total_price'    => 'decimal:2',
-        ];
-    }
+    protected $casts = [
+        'start_datetime' => 'datetime',
+        'end_datetime'   => 'datetime',
+        'confirmed_at'   => 'datetime',
+        'cancelled_at'   => 'datetime',
+        'duration_hours' => 'decimal:2',
+        'total_price'    => 'decimal:2',
+    ];
 
     // -------------------------------------------------------
     // Relationships

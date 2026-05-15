@@ -91,7 +91,7 @@ class BookingController extends Controller
             ], 403);
         }
 
-        $booking->load(['room', 'user:id,name,email', 'confirmedBy:id,name', 'checkouts.equipment:id,name,code']);
+        $booking->load(['room', 'user:id,name,email,membership_number', 'confirmedBy:id,name', 'checkouts.equipment:id,name,code']);
 
         return response()->json([
             'success' => true,

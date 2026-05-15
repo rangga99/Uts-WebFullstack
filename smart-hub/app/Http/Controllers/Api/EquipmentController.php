@@ -24,7 +24,7 @@ class EquipmentController extends Controller
      */
     public function index(Request $request): JsonResponse
     {
-        $equipment = Equipment::query()
+        $equipment = Equipment::with('activeCheckout.user:id,name,membership_number')
             ->when($request->category, fn ($q) => $q->ofCategory($request->category))
             ->when($request->status, fn ($q) => $q->where('status', $request->status))
             ->when($request->search, fn ($q) => $q->where(function ($sub) use ($request) {

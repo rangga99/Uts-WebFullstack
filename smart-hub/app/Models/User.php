@@ -38,14 +38,11 @@ class User extends Authenticatable
     /**
      * The attributes that should be cast.
      */
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password'          => 'hashed',
-            'is_active'         => 'boolean',
-        ];
-    }
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password'          => 'hashed',
+        'is_active'         => 'boolean',
+    ];
 
     // -------------------------------------------------------
     // Helpers / Accessors

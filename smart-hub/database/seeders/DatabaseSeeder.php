@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         // ------------------------------------------------------------------
         $admin = User::create([
             'name'              => 'Admin SmartHub',
-            'email'             => 'admin@smarthub.com',
+            'email'             => '411253003@undira.ac.id',
             'password'          => Hash::make('password'),
             'role'              => 'admin',
             'phone'             => '081234560001',
@@ -30,8 +30,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $member1 = User::create([
-            'name'              => 'Budi Santoso',
-            'email'             => 'budi@example.com',
+            'name'              => 'Rangga Darmawan',
+            'email'             => 'rangga@gmail.com',
             'password'          => Hash::make('password'),
             'role'              => 'member',
             'phone'             => '081234560010',
@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
 
         $member2 = User::create([
             'name'              => 'Sari Dewi',
-            'email'             => 'sari@example.com',
+            'email'             => 'sari@gmail.com',
             'password'          => Hash::make('password'),
             'role'              => 'member',
             'phone'             => '081234560011',
@@ -196,6 +196,6 @@ class DatabaseSeeder extends Seeder
         // Update mic status to checked_out
         $mic1->update(['status' => 'checked_out']);
 
-        $this->command->info('✅ SmartHub seeded: 3 users, 4 rooms, 5 equipment, 1 booking, 1 checkout');
+        $this->command->info('SmartHub seeded: 3 users, 4 rooms, 5 equipment, 1 booking, 1 checkout');
     }
 }

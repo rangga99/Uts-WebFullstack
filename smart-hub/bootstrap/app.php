@@ -3,6 +3,7 @@
 // File: bootstrap/app.php
 // Laravel 13 — Application Bootstrap
 
+use App\Http\Middleware\EnsureApiToken;
 use App\Http\Middleware\EnsureUserRole;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -19,7 +20,8 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         // Register the role middleware alias
         $middleware->alias([
-            'role' => EnsureUserRole::class,
+            'role'             => EnsureUserRole::class,
+            'ensure_api_token' => EnsureApiToken::class,
         ]);
 
         // Ensure API responses are always JSON

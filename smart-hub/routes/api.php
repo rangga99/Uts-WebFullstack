@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BookingController;
 use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\EquipmentController;
+use App\Http\Controllers\Api\MemberController;
 use App\Http\Controllers\Api\RoomController;
 use Illuminate\Support\Facades\Route;
 
@@ -105,6 +106,13 @@ Route::prefix('v1')->group(function () {
                 Route::get('/',                             [BookingController::class, 'index']);
                 Route::put('/{booking}/confirm',            [BookingController::class, 'confirm']);
                 Route::put('/{booking}/status',             [BookingController::class, 'updateStatus']);
+            });
+
+            // Members management
+            Route::prefix('members')->group(function () {
+                Route::get('/',                         [MemberController::class, 'index']);
+                Route::post('/',                        [MemberController::class, 'store']);
+                Route::patch('/{user}/toggle',          [MemberController::class, 'toggle']);
             });
         });
     });
