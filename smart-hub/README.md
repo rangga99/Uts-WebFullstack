@@ -111,4 +111,3 @@ All API routes are prefixed with `/api/v1` and protected with Laravel Sanctum wh
 		- POST  /api/v1/admin/members — Create member
 		- PATCH /api/v1/admin/members/{user}/toggle — Toggle member active state
 
-If you'd like, I can also generate a machine-friendly OpenAPI/Swagger spec from these routes.
